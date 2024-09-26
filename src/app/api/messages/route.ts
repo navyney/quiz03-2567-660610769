@@ -7,7 +7,10 @@ export const GET = async (request: NextRequest) => {
   readDB();
   const roomId = request.nextUrl.searchParams.get("roomId");
   const messageId = request.nextUrl.searchParams.get("messageId");
-  if() {
+  const roomId = DB.messages.find (
+    (roomId) => messages.roomId === roomId
+  );
+  if(!roomId) {
     return NextRequest.json(
       {
         ok: false,
