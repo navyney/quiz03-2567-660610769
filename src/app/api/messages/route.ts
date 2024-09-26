@@ -5,14 +5,16 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (request: NextRequest) => {
   readDB();
-
-  // return NextResponse.json(
-  //   {
-  //     ok: false,
-  //     message: `Room is not found`,
-  //   },
-  //   { status: 404 }
-  // );
+  const roomId = request.nextUrl.searchParams.get("roomId");
+  const messageId = request.nextUrl.searchParams.get("messageId");
+  if() {
+    return NextRequest.json(
+      {
+        ok: false,
+        message: `Room is not found`,
+      },
+      { status: 404 }
+    );}
 };
 
 export const POST = async (request: NextRequest) => {
